@@ -15,7 +15,7 @@ factorio_PID=$(ps -ef | grep -i '[b]in/x64/factorio' | awk '{print $2}')
 # Back up old version for diff
 cp -f $factorio_package $factorio_package_past
 
-# download new version
+# Download new version
 if ! wget -O $factorio_package https://factorio.com/get-download/stable/headless/linux64; then
     echo "Failed to download the Factorio package. Aborting..."
     exit 1
@@ -48,6 +48,7 @@ else
     echo "No running Factorio process found."
 fi
 
+#excute new version
 nohup $factorio_binary --server-settings $factorio_server_settings --start-server $factorio_saves > "$log_file" 2>&1 &
 if [ $? -eq 0 ]; then
     echo "Factorio server started successfully. Logs are saved in $log_file"
