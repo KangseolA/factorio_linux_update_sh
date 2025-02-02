@@ -12,7 +12,7 @@ log_file="/opt/factorio/logs/$current_date.log"
 # Check running factorio PID
 factorio_PID=$(ps -ef | grep -i '[b]in/x64/factorio' | awk '{print $2}')
 
-# Back up old version for diff
+# Backup old version for diff
 cp -f $factorio_package $factorio_package_past
 
 # Download new version
