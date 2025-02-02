@@ -9,7 +9,7 @@ factorio_saves=/opt/factorio/saves/20241205.zip
 current_date=$(date '+%Y%m%d%H')
 log_file="/opt/factorio/logs/$current_date.log"
 
-# Check running factory PID
+# Check running factorio PID
 factorio_PID=$(ps -ef | grep -i '[b]in/x64/factorio' | awk '{print $2}')
 
 # Back up old version for diff
